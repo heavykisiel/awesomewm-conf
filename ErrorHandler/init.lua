@@ -22,3 +22,13 @@ do
     end)
 end
 -- }}}
+function debugger(fontName)
+    naughty.notify({
+        title = "Debug:",
+        text = fontName ,
+        timeout = 0,  -- Keeps the notification until closed
+        position = "top_right",
+        screen = mouse.screen
+    })
+end
+

@@ -7,9 +7,6 @@ require("awful.autofocus")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
-local naughty = require("naughty")
-local menubar = require("menubar")
-local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 require("awful.hotkeys_popup.keys")
 
@@ -21,19 +18,10 @@ beautiful.init(theme_path)
 
 
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
-function debugger(fontName)
-    naughty.notify({
-        title = "Debug:",
-        text = fontName ,
-        timeout = 0,  -- Keeps the notification until closed
-        position = "top_right",
-        screen = mouse.screen
-    })
-end
 -- debugger(theme_path)
 
 awful.layout.layouts = {
@@ -48,7 +36,6 @@ awful.layout.layouts = {
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
-    -- 
     awful.layout.suit.corner.nw,
     awful.layout.suit.floating,
     -- awful.layout.suit.corner.ne,
@@ -57,24 +44,19 @@ awful.layout.layouts = {
 }
 -- }}}
 
--- {{{ Menu
+-- Menu
 require("Menu")
--- }}}
---- {{{ Wibar
+--- Wibar
 require("TopBar")
--- }}}
 
--- {{{ Mouse bindings
+-- Mouse bindings
 require("MouseBindings")
--- }}}
 
--- {{{ Key bindings
+-- Key bindings
 require("KeyBindings")
--- }}}
 
--- {{{ Rules
+--  Rules
 require("Rules")
--- }}}
 
 -- {{{ Signals
 client.connect_signal("manage", function (c)
