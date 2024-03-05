@@ -15,7 +15,7 @@ require('ErrorHandler')
 -- {{{ Variable definitions
 local theme_path = "/home/niko/.config/awesome/themes/niko/theme.lua"
 beautiful.init(theme_path)
-
+beautiful.useless_gap = 8
 
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
@@ -112,7 +112,6 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
-beautiful.useless_gap = 8
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
