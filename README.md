@@ -17,3 +17,5 @@ To make work screenshot apps and launcher as intended I recommend you to install
 * scrot
 * nitrogen
 * picom
+Also to be able to run scripts through keybindings I suggest to install dependencies:
+* tesseract

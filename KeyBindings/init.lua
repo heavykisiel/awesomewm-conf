@@ -95,7 +95,7 @@ globalkeys = gears.table.join(
                function () awful.util.spawn_with_shell("scrot -s '/home/niko/screenshots/%Y-%m-%d_$wx$h.png'")                end,
               {description = "screenshot", group = "image"}), 
     awful.key({ modkey, "Shift"   }, "b",
-              function () awful.util.spawn_with_shell('bash /home/niko/scripts/ss_and_ocr.sh')                end,
+              function () awful.util.spawn_with_shell('bash ~/.config/awesome/scripts/ss_and_ocr.sh')                end,
              {description = "screenshot with ocr and show", group = "image"}),          
 
     awful.key({ modkey, "Control" }, "n",
